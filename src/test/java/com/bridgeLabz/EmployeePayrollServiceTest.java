@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
+import static com.bridgeLabz.EmployeePayrollService.IOService.FILE_IO;
+
 public class EmployeePayrollServiceTest {
     //UC4 - Ability to store Employee Payroll into a file
     @Test
@@ -16,10 +18,17 @@ public class EmployeePayrollServiceTest {
         };
         EmployeePayrollService employeePayrollService;
         employeePayrollService = new EmployeePayrollService(Arrays.asList(arrayOfEmps));
-        employeePayrollService.writeEmployeePayrollData(EmployeePayrollService.IOService.FILE_IO);
-        employeePayrollService.printData(EmployeePayrollService.IOService.FILE_IO);
-        long entries = employeePayrollService.countEntries(EmployeePayrollService.IOService.FILE_IO);
+        employeePayrollService.writeEmployeePayrollData(FILE_IO);
+        employeePayrollService.printData(FILE_IO);
+        long entries = employeePayrollService.countEntries(FILE_IO);
         System.out.println("Total number of Entries = "+entries);//UC5 TotalEntries = 3
         Assertions.assertEquals(3, entries);
+    }
+    //UC6 -Ability to Analysis the EmployeePayroll service
+    @Test
+    public void givenFileOnReadingFromFileShouldMatchEmployeeCount() {
+        EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+        long entries = employeePayrollService.readEmployeePayrollData(FILE_IO);
+        Assertions.assertEquals(3,entries);
     }
 }
