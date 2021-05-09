@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgeLabz.EmployeePayrollServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-09T14:17:31" hostname="RAKESH" time="0.061">
+<testsuite name="com.bridgeLabz.EmployeePayrollServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-09T14:22:36" hostname="RAKESH" time="0.054">
   <properties/>
-  <testcase name="given3EmployeesWhenWrittenToFileShouldMatchEmployeeEntries()" classname="com.bridgeLabz.EmployeePayrollServiceTest" time="0.061"/>
+  <testcase name="given3EmployeesWhenWrittenToFileShouldMatchEmployeeEntries()" classname="com.bridgeLabz.EmployeePayrollServiceTest" time="0.054"/>
   <system-out><![CDATA[Emp ID:1, Emp name:Jeff Bezos, Salary:1000000.0
 Emp ID:2, Emp name:Bill Gates, Salary:2000000.0
 Emp ID:3, Emp name:Mark Zuckerberg, Salary:3000000.0
+Total number of Entries = 3
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
