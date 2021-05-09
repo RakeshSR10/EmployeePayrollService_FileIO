@@ -25,7 +25,7 @@ public class EmployeePayrollService {
         employeePayrollService.readEmployeePayrollData(consoleInputReader);
         employeePayrollService.writeEmployeePayrollData(IOService.CONSOLE_IO);
     }
-    private void readEmployeePayrollData(Scanner consoleInputReader){
+    public void readEmployeePayrollData(Scanner consoleInputReader){
         System.out.println("Enter Employee ID:");
         int id = consoleInputReader.nextInt();
         System.out.println("Enter Employee Name:");
@@ -52,5 +52,11 @@ public class EmployeePayrollService {
         if(ioService.equals(IOService.FILE_IO))
             return new EmployeePayrollFileIOService().countEntries();
         return 0;
+    }
+    //UC6 Analysis
+    public long readEmployeePayrollData(IOService ioService) {
+        if(ioService.equals(ioService.FILE_IO))
+            this.employeePayrollList = new EmployeePayrollFileIOService().readData();
+        return employeePayrollList.size();
     }
 }
